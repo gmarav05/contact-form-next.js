@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import Link from 'next/link';
 import React from "react";
 import ContactsLists from "@/components/contact-list.jsx";
+import ContactStats from "@/components/contact-stats.jsx";
 
 const Contacts = () => {
     return (
@@ -16,6 +17,7 @@ const Contacts = () => {
                         >Back to Home</Button>
                     </Link>
                 </div>
+                <ContactStats/>
                 <ContactsLists/>
             </div>
         </main>
