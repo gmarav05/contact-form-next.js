@@ -1,8 +1,7 @@
 "use server"
 
-import Contact from "@/models/Contact";
-import dbConnect from "@/lib/db";
-import { success } from "zod";
+import {Contact} from "@/models/Contact";
+import { dbConnect } from "@/lib/db";
 
 export async function createContact(formData) {
     try {

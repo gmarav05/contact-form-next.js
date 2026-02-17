@@ -15,19 +15,19 @@ const ContactForm = () => {
 
 
   async function onSubmit(formData) {
-    setIsSubmitting(true)
+    setIsSubmitting(true);
     setMessage("")
 
     const result = await createContact(formData);
-    console.log(result)
-    if(result.success){
-      setMessage("Message sent successfully!")
 
-      const form = document.getElementById("contact-form")
-      form.reset()
+    if (result.success) {
+        setMessage("Message sent successfully")
+        
+        const form = document.getElementById("contact-form")
+        form.reset()
     }
-    else{
-        setMessage(result.error || "Something went wrong")
+     else{
+        setMessage(result.error || "Something went wrong");
     }
 
     setIsSubmitting(false)
