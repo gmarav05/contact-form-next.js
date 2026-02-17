@@ -2,6 +2,7 @@
 
 import {Contact} from "@/models/Contact";
 import { dbConnect } from "@/lib/db";
+import { updateTag } from "next/cache";
 
 export async function createContact(formData) {
     try {
@@ -37,5 +38,21 @@ export async function createContact(formData) {
             success: false,
             error: "Try again later"
         }
+    }
+}
+
+export async function getContacts() {
+    try {
+        await dbConnect();
+        const contacts = await Contact.find().sort({ createdAt: -1}).lean();
+        return contacts.map(contact => ({
+            ...contact,
+            _id: contact._id.toString(),
+            createdAt: contact.createdAt,
+            updatedAt: contact.updatedAt,
+        }));
+    } catch (error) {
+        console.error("Error fetching contacts", error);
+        return [];
     }
 }
