@@ -28,10 +28,8 @@ https://github.com/user-attachments/assets/e1d10535-f215-4ca7-93fa-bc8547b2c85b
 
 ## 🖼️ Screenshots
 
-```
 <img src="./main.png" width="450" height="450" /> </br>
 <img src="./contact.png" width="450" height="450" /> </br>
-```
 
 ---
 
