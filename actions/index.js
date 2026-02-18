@@ -20,13 +20,14 @@ export async function createContact(formData) {
         }
 
         const contact = new Contact({
-  name: name.trim(),
-  email: email.trim(),
-  subject: subject.trim(),
-  message: message.trim(),
-});
+            name: name.trim(),
+            email: email.trim(),
+            subject: subject.trim(),
+            message: message.trim(),
+        });
 
-await contact.save(); 
+        await contact.save();
+        revalidatePath("/contacts");
 
         return {
             success: true,
